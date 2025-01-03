@@ -8,7 +8,7 @@ export const useSocket=()=>{
 }
 
 export const SocketProvider=({children})=>{
-    const socket=useMemo(()=>io(process.env.REACT_APP_SOCKET_URL),[]);
+    const socket=useMemo(()=>io(import.meta.env.VITE_SOCKET_URL),[]);
     return (
         <SocketContext.Provider value={socket}>
             {children}
