@@ -3,6 +3,8 @@ import {io} from 'socket.io-client';
 const SocketContext=createContext(null);
 
 export const useSocket=()=>{
+    console.log(import.meta.env.VITE_SOCKET_URL);
+
      const socket=useContext(SocketContext);
      return socket;
 }
