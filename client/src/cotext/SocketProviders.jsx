@@ -8,7 +8,7 @@ export const useSocket=()=>{
 }
 
 export const SocketProvider=({children})=>{
-    const socket=useMemo(()=>io("http://localhost:8000"),[]);
+    const socket=useMemo(()=>io(process.env.REACT_APP_SOCKET_URL),[]);
     return (
         <SocketContext.Provider value={socket}>
             {children}
